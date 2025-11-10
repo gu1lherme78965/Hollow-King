@@ -1,10 +1,12 @@
+package Entities;
+
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.screen.Screen;
 
-public class Character {
+public class Player {
     private int x, y;
 
-    public Character(int x, int y) {
+    public Player(int x, int y) {
         this.x = x;
         this.y = y;
     }

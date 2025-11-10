@@ -1,3 +1,4 @@
+import Entities.Player;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -7,12 +8,11 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class Game {
     private Screen screen;
-    private final Character character;
+    private final Player player;
 
     Game() {
         // The terminal window size was chosen to a 1:3 ratio to keep a landscape feel.
@@ -35,12 +35,12 @@ public class Game {
             e.printStackTrace();
         }
 
-        character = new Character(10, 10);
+        player = new Player(10, 10);
     }
 
     public void draw() throws IOException {
         screen.clear();
-        character.draw(screen);
+        player.draw(screen);
         screen.refresh();
     }
 
@@ -70,16 +70,16 @@ public class Game {
         } else {
             switch (key.getKeyType()) {
                 case KeyType.ArrowLeft:
-                    character.moveLeft();
+                    player.moveLeft();
                     break;
                 case KeyType.ArrowRight:
-                    character.moveRight();
+                    player.moveRight();
                     break;
                 case KeyType.ArrowUp:
-                    character.moveUp();
+                    player.moveUp();
                     break;
                 case KeyType.ArrowDown:
-                    character.moveDown();
+                    player.moveDown();
                     break;
             }
         }
