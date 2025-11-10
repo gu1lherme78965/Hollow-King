@@ -17,3 +17,4 @@ situate himself on the projects timeline and get a sense of how long every imple
 - Lanterna framework was set up successfully through Maven Central.
 - Created Game class to handle game logic removing any game related code from the main method.
 - Implemented basic temporary character movement and abstracter character logic into character class.
+- Change the terminal size and font size to simulate better screen resolution.
