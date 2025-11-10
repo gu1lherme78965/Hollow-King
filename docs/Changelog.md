@@ -7,6 +7,7 @@ situate himself on the projects timeline and get a sense of how long every imple
 ### v0.1.0
 - [06/11/2025](#06112025)
 - [09/11/2025](#09112025)
+- [10/11/2025](#10112025)
 
 ## Entries
 #### 06/11/2025:
@@ -18,3 +19,7 @@ situate himself on the projects timeline and get a sense of how long every imple
 - Created Game class to handle game logic removing any game related code from the main method.
 - Implemented basic temporary character movement and abstracter character logic into character class.
 - Change the terminal size and font size to simulate better screen resolution.
+
+#### 10/11/2025
+- Implemented State pattern design for Game class allowing to abstract state logic away from game class.
+- Updated the README.md to include planned features.
