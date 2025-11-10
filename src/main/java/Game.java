@@ -15,13 +15,14 @@ public class Game {
     private final Character character;
 
     Game() {
-        TerminalSize size = new TerminalSize(350, 100);
+        // The terminal window size was chosen to a 1:3 ratio to keep a landscape feel.
+        TerminalSize size = new TerminalSize(210, 70);
 
         try {
             /* Creates a default terminal and changes its normal font size and increases the default terminal size to
-             simulate better screen resolution. 8 was chosen to be an appropriate "pixel" size.
+             simulate better screen resolution. 12 was chosen to be an appropriate "pixel" size.
              */
-            int pixel_size = 8;
+            int pixel_size = 12;
             Terminal terminal = new DefaultTerminalFactory()
                     .setTerminalEmulatorFontConfiguration(SwingTerminalFontConfiguration.getDefaultOfSize(pixel_size))
                     .setInitialTerminalSize(size).createTerminal();
