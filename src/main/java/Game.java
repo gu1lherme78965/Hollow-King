@@ -5,6 +5,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -14,10 +15,16 @@ public class Game {
     private final Character character;
 
     Game() {
-        TerminalSize size = new TerminalSize(150, 50);
+        TerminalSize size = new TerminalSize(350, 100);
 
         try {
-            Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(size).createTerminal();
+            /* Creates a default terminal and changes its normal font size and increases the default terminal size to
+             simulate better screen resolution. 8 was chosen to be an appropriate "pixel" size.
+             */
+            int pixel_size = 8;
+            Terminal terminal = new DefaultTerminalFactory()
+                    .setTerminalEmulatorFontConfiguration(SwingTerminalFontConfiguration.getDefaultOfSize(pixel_size))
+                    .setInitialTerminalSize(size).createTerminal();
             screen = new TerminalScreen(terminal);
 
             screen.setCursorPosition(null);   // we don't need a cursor
