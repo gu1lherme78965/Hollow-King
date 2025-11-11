@@ -10,7 +10,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import java.io.IOException;
 
 public class LevelState extends GameState {
-    private Entity entities;
+    private Level level;
     private Player player;
     Screen screen;
     Game game;
