@@ -8,6 +8,7 @@ situate himself on the projects timeline and get a sense of how long every imple
 - [06/11/2025](#06112025)
 - [09/11/2025](#09112025)
 - [10/11/2025](#10112025)
+- [11/11/2025](#11112025)
 
 ## Entries
 #### 06/11/2025:
@@ -23,3 +24,7 @@ situate himself on the projects timeline and get a sense of how long every imple
 #### 10/11/2025
 - Implemented State pattern design for Game class allowing to abstract state logic away from game class.
 - Updated the README.md to include planned features.
+
+#### 11/11/2025
+- Implemented the Player png feature to make the player appear as a sprite from a png.
+- successfuly merged and deleted the feature/playerpng branch into dev.
