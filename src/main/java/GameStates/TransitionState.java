@@ -2,7 +2,11 @@ package GameStates;
 
 import java.io.IOException;
 
-public class TransitionState implements GameState{
+public class TransitionState extends GameState{
+
+    public TransitionState(Game game) {
+        super(game);
+    }
 
     @Override
     public void handleInput() throws IOException {

@@ -2,10 +2,10 @@ package GameStates;
 
 import java.io.IOException;
 
-public class MainMenuState implements GameState {
+public class MainMenuState extends GameState {
 
-    public MainMenuState(){
-
+    public MainMenuState(Game game) {
+        super(game);
     }
 
     @Override

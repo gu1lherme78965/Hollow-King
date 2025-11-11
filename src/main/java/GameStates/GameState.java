@@ -2,8 +2,14 @@ package GameStates;
 
 import java.io.IOException;
 
-public interface GameState {
-    void handleInput() throws IOException, QuitGameException;
-    void draw() throws IOException;
-    void update();
+public abstract class GameState {
+    private Game game;
+
+    public GameState(Game game) {
+        this.game = game;
+    }
+
+    public abstract void handleInput() throws IOException;
+    public abstract void draw() throws IOException;
+    public abstract void update();
 }
