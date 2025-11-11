@@ -1,4 +1,4 @@
-package GameStates;
+package Game;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.screen.Screen;

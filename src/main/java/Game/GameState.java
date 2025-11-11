@@ -1,4 +1,4 @@
-package GameStates;
+package Game;
 
 import java.io.IOException;
 
