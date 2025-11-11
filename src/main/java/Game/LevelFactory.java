@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LevelFactory {
     public static Level load(String level_file_path) {
         JSONParser parser = new JSONParser();
-        level_file_path = System.getProperty("user.dir") +  "\\src\\main\\java\\resources\\data\\levels\\" + level_file_path;
+        level_file_path = System.getProperty("user.dir") +  "\\src\\main\\resources\\data\\levels\\" + level_file_path;
 
         // parse JSON file with level data
         try {
