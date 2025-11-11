@@ -1,6 +1,6 @@
 package Game;
 
-import org.json.JSONArray;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -33,8 +33,8 @@ public class LevelFactory {
 
     private static Level construct(JSONObject JSON_obj) {
         // Retrieving basic Level data
-        int width = Integer.parseInt((String) JSON_obj.get("width"));
-        int height = Integer.parseInt((String) JSON_obj.get("height"));
+        int width = Integer.parseInt(JSON_obj.get("width").toString());
+        int height = Integer.parseInt(JSON_obj.get("height").toString());
         String name = (String) JSON_obj.get("name");
         JSONArray tiles = (JSONArray) JSON_obj.get("terrain_tilesID");
 
@@ -52,7 +52,7 @@ public class LevelFactory {
     private static int[] JSONArrayToIntArray(JSONArray array, int length) {
         int[] IDs = new int[length];
         for (int i = 0; i < length; i++) {
-            IDs[i] = Integer.parseInt((String) array.get(i));
+            IDs[i] = Integer.parseInt(array.get(i).toString());
         }
         return IDs;
     }

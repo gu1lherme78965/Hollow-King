@@ -19,6 +19,7 @@ public class LevelState extends GameState {
         this.screen = game.getScreen();
         this.game = game;
         this.player = new Player(10, 10);
+        level = LevelFactory.load("testLevel.json");
     }
 
     @Override
