@@ -5,7 +5,7 @@ import java.io.IOException;
 public class MainMenuState extends GameState {
 
     public MainMenuState(Game game) {
-        super(game);
+
     }
 
     @Override

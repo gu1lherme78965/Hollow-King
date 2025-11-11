@@ -10,7 +10,6 @@ import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 import java.io.IOException;
 
 public class Game {
-    private Terminal terminal;
     private Screen screen;
     private GameState current_game_state;
     private boolean running;
@@ -24,7 +23,7 @@ public class Game {
              simulate better screen resolution. 12 was chosen to be an appropriate "pixel" size.
              */
             int pixel_size = 8;
-            this.terminal = new DefaultTerminalFactory()
+            Terminal terminal = new DefaultTerminalFactory()
                     .setTerminalEmulatorFontConfiguration(SwingTerminalFontConfiguration.getDefaultOfSize(pixel_size))
                     .setInitialTerminalSize(size).createTerminal();
             screen = new TerminalScreen(terminal);
@@ -70,10 +69,6 @@ public class Game {
 
     public Screen getScreen() {
         return screen;
-    }
-
-    public Terminal getTerminal() {
-        return terminal;
     }
 }
 

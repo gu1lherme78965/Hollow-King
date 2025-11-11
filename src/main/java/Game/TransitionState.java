@@ -5,7 +5,7 @@ import java.io.IOException;
 public class TransitionState extends GameState{
 
     public TransitionState(Game game) {
-        super(game);
+
     }
 
     @Override

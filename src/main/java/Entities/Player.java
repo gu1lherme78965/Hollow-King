@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Player {
+public class Player extends Entity{
     private int x, y;
     private BufferedImage sprite;
     String sprite_path;
@@ -57,6 +57,7 @@ public class Player {
         x += 1;
     }
 
+    @Override
     public void draw(Screen screen) {
 
 
@@ -74,8 +75,6 @@ public class Player {
                 }
             }
         }
-
-        screen.setCharacter(x, y, TextCharacter.fromCharacter('X')[0]);
 
     }
 }

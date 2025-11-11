@@ -13,13 +13,10 @@ public class LevelState extends GameState {
     private Entity entities;
     private Player player;
     Screen screen;
-    Terminal terminal;
     Game game;
 
     public LevelState(Game game) {
-        super(game);
         this.screen = game.getScreen();
-        this.terminal = game.getTerminal();
         this.game = game;
         this.player = new Player(10, 10);
     }
