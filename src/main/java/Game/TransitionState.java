@@ -1,10 +1,10 @@
-package GameStates;
+package Game;
 
 import java.io.IOException;
 
-public class MainMenuState implements GameState {
+public class TransitionState extends GameState{
 
-    public MainMenuState(){
+    public TransitionState(Game game) {
 
     }
 

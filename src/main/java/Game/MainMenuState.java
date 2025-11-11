@@ -1,8 +1,12 @@
-package GameStates;
+package Game;
 
 import java.io.IOException;
 
-public class TransitionState implements GameState{
+public class MainMenuState extends GameState {
+
+    public MainMenuState(Game game) {
+
+    }
 
     @Override
     public void handleInput() throws IOException {

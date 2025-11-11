@@ -1,28 +1,31 @@
-package GameStates;
+package Game;
 
 import Entities.Entity;
 import Entities.Player;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 
-public class LevelState implements GameState {
+public class LevelState extends GameState {
     private Entity entities;
     private Player player;
     Screen screen;
+    Game game;
 
-    public LevelState(Screen screen) {
+    public LevelState(Game game) {
+        this.screen = game.getScreen();
+        this.game = game;
         this.player = new Player(10, 10);
-        this.screen = screen;
     }
 
     @Override
-    public void handleInput() throws IOException, QuitGameException {
+    public void handleInput() throws IOException{
         // user input reading
         KeyStroke key = screen.readInput();
-        if (key.getKeyType() == KeyType.EOF) {throw new QuitGameException();}
+        if (key.getKeyType() == KeyType.EOF) {game.quit();}
         processKey(key);
     }
 

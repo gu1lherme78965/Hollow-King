@@ -1,8 +1,5 @@
-import Entities.Player;
-import GameStates.GameState;
-import GameStates.LevelState;
-import GameStates.MainMenuState;
-import GameStates.QuitGameException;
+package Game;
+
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
@@ -17,15 +14,15 @@ public class Game {
     private GameState current_game_state;
     private boolean running;
 
-    Game() {
+    public Game() {
         // The terminal window size was chosen to a 1:3 ratio to keep a landscape feel.
-        TerminalSize size = new TerminalSize(210, 70);
+        TerminalSize size = new TerminalSize(300, 100);
 
         try {
             /* Creates a default terminal and changes its normal font size and increases the default terminal size to
              simulate better screen resolution. 12 was chosen to be an appropriate "pixel" size.
              */
-            int pixel_size = 12;
+            int pixel_size = 8;
             Terminal terminal = new DefaultTerminalFactory()
                     .setTerminalEmulatorFontConfiguration(SwingTerminalFontConfiguration.getDefaultOfSize(pixel_size))
                     .setInitialTerminalSize(size).createTerminal();
@@ -38,27 +35,22 @@ public class Game {
             e.printStackTrace();
         }
 
-        current_game_state = new MainMenuState();
         running = true;
     }
 
     public void run() {
-        // temporary line while the game does not have a main menu state set up
-        current_game_state = new LevelState(screen);
 
         // main loop
         try {
             while(running) {
                 // tells whatever state it is in to handle the logic.
+                current_game_state.draw();
                 current_game_state.handleInput();
                 current_game_state.update();
-                current_game_state.draw();
 
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (QuitGameException e) {
-            running = false;
         }
 
     }
@@ -74,4 +66,9 @@ public class Game {
     public void quit() {
         running = false;
     }
+
+    public Screen getScreen() {
+        return screen;
+    }
 }
+
