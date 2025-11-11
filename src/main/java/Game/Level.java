@@ -3,23 +3,26 @@ package Game;
 import Entities.Player;
 
 public class Level {
+    // foreground and background are being ignored at this stage of development
     private final Player player;
     private Layer background;
     private Layer terrain;
     private Layer foreground;
-    private int width, height;
+    private int tiled_width, tiled_height;
 
-    public  Level(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public  Level(int tiled_width, int tiled_height, Layer terrain) {
+        this.tiled_width = tiled_width;
+        this.tiled_height = tiled_height;
         this.player = new Player(10, 10);
+
+        this.terrain = terrain;
     }
 
-    public int getWidth() {
-        return width;
+    public int getTiledWidth() {
+        return tiled_width;
     }
 
-    public int getHeight() {
-        return height;
+    public int getTiledHeight() {
+        return tiled_height;
     }
 }
