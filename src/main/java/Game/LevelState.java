@@ -1,16 +1,15 @@
 package Game;
 
-import Entities.Entity;
+
 import Entities.Player;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
 
 public class LevelState extends GameState {
-    private Entity entities;
+    private Level level;
     private Player player;
     Screen screen;
     Game game;
@@ -19,6 +18,7 @@ public class LevelState extends GameState {
         this.screen = game.getScreen();
         this.game = game;
         this.player = new Player(10, 10);
+        level = LevelFactory.load("testLevel.json");
     }
 
     @Override
@@ -32,6 +32,7 @@ public class LevelState extends GameState {
     @Override
     public void draw() throws IOException {
         screen.clear();
+        level.draw(screen);
         player.draw(screen);
         screen.refresh();
     }

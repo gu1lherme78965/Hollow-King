@@ -17,7 +17,7 @@ public class Player extends Entity{
     public Player(int x, int y) {
         this.x = x;
         this.y = y;
-        sprite_path = System.getProperty("user.dir") + "\\sprites\\player\\Player.png";
+        sprite_path = System.getProperty("user.dir") + "\\src\\main\\resources\\sprites\\Player\\Player.png";
 
 
         try {
