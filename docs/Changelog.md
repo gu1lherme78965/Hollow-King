@@ -30,3 +30,5 @@ situate himself on the projects timeline and get a sense of how long every imple
 - successfully merged and deleted the feature/playerpng branch into dev.
 - Added dependency to gradle.build to handle JSON files.
 - Created LevelFactory to create Level instances from data in JSON files.
+- Created Renderer to handle Layer rendering in a Level
+- fully implemented Level rendering although it is terribly inefficient at the moment and need to be fixed.
