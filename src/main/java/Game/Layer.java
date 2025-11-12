@@ -25,7 +25,7 @@ public class Layer {
     }
 
     public void setWidth(int width) {
-
+        this.width = width;
     }
 
     public int getHeight() {
@@ -33,7 +33,23 @@ public class Layer {
     }
 
     public void setHeight(int height) {
+        this.height = height;
+    }
 
+    public int getTiled_height() {
+        return tiled_height;
+    }
+
+    public void setTiled_height(int tiled_height) {
+        this.tiled_height = tiled_height;
+    }
+
+    public int getTiled_width() {
+        return tiled_width;
+    }
+
+    public void setTiled_width(int tiled_width) {
+        this.tiled_width = tiled_width;
     }
 
     public int getTile(int x, int y) {

@@ -1,6 +1,9 @@
 package Game;
 
 import Entities.Player;
+import com.googlecode.lanterna.screen.Screen;
+
+import Renderer.Renderer;
 
 public class Level {
     // foreground and background are being ignored at this stage of development
@@ -25,5 +28,10 @@ public class Level {
 
     public int getTiledHeight() {
         return tiled_height;
+    }
+
+    public void draw(Screen screen) {
+        // background and foreground rendering are skipped for this stage of development
+        Renderer.renderLayer(screen, terrain);
     }
 }
