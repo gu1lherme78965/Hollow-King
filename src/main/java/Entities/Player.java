@@ -10,15 +10,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class Player extends Entity{
-    private int x, y;
     private BufferedImage sprite;
     String sprite_path;
 
-    public Player(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Player(int x, int y,  int width, int height) {
+        super(x, y,  width, height);
         sprite_path = System.getProperty("user.dir") + "\\src\\main\\resources\\sprites\\Player\\Player.png";
-
 
         try {
             sprite = javax.imageio.ImageIO.read(new File(sprite_path));
@@ -76,5 +73,10 @@ public class Player extends Entity{
             }
         }
 
+    }
+
+    @Override
+    public void update() {
+        if(this.y < 100 - this.height) this.y+=1;
     }
 }

@@ -13,11 +13,12 @@ public class LevelState extends GameState {
     private Player player;
     Screen screen;
     Game game;
+    private final long fps = 1000 /30;
 
     public LevelState(Game game) {
         this.screen = game.getScreen();
         this.game = game;
-        this.player = new Player(10, 10);
+        this.player = new Player(10, 10, 16, 14);
         level = LevelFactory.load("testLevel.json");
     }
 
@@ -30,16 +31,17 @@ public class LevelState extends GameState {
     }
 
     @Override
-    public void draw() throws IOException {
+    public void draw() throws IOException, InterruptedException {
         screen.clear();
         level.draw(screen);
         player.draw(screen);
-        screen.refresh();
+        screen.refresh(Screen.RefreshType.DELTA);
+        Thread.sleep(fps);
     }
 
     @Override
     public void update() {
-
+        player.update();
     }
 
     private void processKey(KeyStroke key) throws IOException{

@@ -51,6 +51,9 @@ public class Game {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e)  {
+            quit();
+            e.printStackTrace();
         }
 
     }

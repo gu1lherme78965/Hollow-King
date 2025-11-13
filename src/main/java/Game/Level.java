@@ -17,7 +17,7 @@ public class Level {
     public  Level(String name, int tiled_width, int tiled_height, Layer terrain) {
         this.tiled_width = tiled_width;
         this.tiled_height = tiled_height;
-        this.player = new Player(10, 10);
+        this.player = new Player(10, 10, 16, 14);
 
         this.terrain = terrain;
     }
